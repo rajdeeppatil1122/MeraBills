@@ -34,11 +34,11 @@ fromJson() -> Converts a JSON string back into a list of payments.
 **4] User saves payments** -> Data is converted to JSON and stored using FileHelper.
 **5] Next app launch** -> Payments are retrieved and displayed again.
 
-![1](https://github.com/user-attachments/assets/776910a3-0d4e-434d-bc30-7296e8ff40ef)
-![2](https://github.com/user-attachments/assets/90aba4a2-4939-43b8-98e1-ec20d53604f7)
-![3](https://github.com/user-attachments/assets/5df0e620-3e32-45b4-a329-860f7dc1f6d7)
-![4](https://github.com/user-attachments/assets/c381c2a1-e00f-47fa-b23d-a73509c7e809)
-![5](https://github.com/user-attachments/assets/1ac90d9f-7e82-4b2a-9e52-e81033bbde78)
+<img src="https://github.com/user-attachments/assets/776910a3-0d4e-434d-bc30-7296e8ff40ef" width="300" height="700"/>
+<img src="https://github.com/user-attachments/assets/90aba4a2-4939-43b8-98e1-ec20d53604f7" width="300" height="700"/>
+<img src="https://github.com/user-attachments/assets/5df0e620-3e32-45b4-a329-860f7dc1f6d7" width="300" height="700"/>
+<img src="https://github.com/user-attachments/assets/c381c2a1-e00f-47fa-b23d-a73509c7e809" width="300" height="700"/>
+<img src="https://github.com/user-attachments/assets/1ac90d9f-7e82-4b2a-9e52-e81033bbde78" width="300" height="700"/>
 
 
 
