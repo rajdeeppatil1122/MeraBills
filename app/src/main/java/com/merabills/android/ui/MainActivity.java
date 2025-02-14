@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPaymentAdded(Payment payment) {
                 payments.add(payment);
                 paymentTypesUsed.add(payment.getType());
-//                savePayments();
+
                 updateUI();
             }
         }).show();
