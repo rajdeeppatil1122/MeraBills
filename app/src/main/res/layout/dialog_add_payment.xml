@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_payment_type"
+        android:textColor="#1C1C1C"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/payment_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/black"
+        android:textColorHint="#1C1C1C" />
+
+    <EditText
+        android:layout_marginBottom="4dp"
+        android:id="@+id/amount_input"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="@string/enter_amount"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="#606060" />
+
+    <EditText
+        android:layout_marginBottom="4dp"
+        android:id="@+id/provider_input"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="@string/enter_provider"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        android:textColor="@color/black"
+        android:textColorHint="#606060" />
+
+    <EditText
+        android:layout_marginBottom="4dp"
+        android:id="@+id/reference_input"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="@string/enter_transaction_reference"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="#606060" />
+
+    <Button
+        android:id="@+id/btn_add_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/add_payment"
+        android:textColor="@color/white" />
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MeraBills</string>
+    <string name="add_payments">Add Payments</string>
+    <string name="total_amount_0">Total Amount: ₹0</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="payments">Payments</string>
+    <string name="save">Save</string>
+    <string name="select_payment_type">Select Payment Type</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_provider">Enter Provider</string>
+    <string name="enter_transaction_reference">Enter Transaction Reference</string>
+</resources>
