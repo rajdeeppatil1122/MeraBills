@@ -2,14 +2,11 @@ package com.merabills.android.ui;
 
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.merabills.android.R;
 import com.merabills.android.model.Payment;
 import com.merabills.android.storage.FileHelper;
@@ -37,65 +34,42 @@ public class MainActivity extends AppCompatActivity {
 
         textViewAddPayment.setPaintFlags(textViewAddPayment.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        textViewAddPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (paymentTypesUsed.size()==3){
-                    Toast.makeText(MainActivity.this, "All types of payments are already added", Toast.LENGTH_SHORT).show();
-                } else {
-                    openAddPaymentDialog(v);
-                }
+        textViewAddPayment.setOnClickListener(v -> {
+            if (paymentTypesUsed.size() == 3) {
+                Toast.makeText(MainActivity.this, "All types of payments are already added", Toast.LENGTH_SHORT).show();
+            } else {
+                openAddPaymentDialog(v);
             }
         });
 
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                savePayments();
-            }
-        });
-
+        saveBtn.setOnClickListener(v -> savePayments());
         loadPayments();
     }
 
     private void loadPayments() {
         String data = FileHelper.readFromFile(this);
-        Log.d("loadPayments data", data);
         if (!data.isEmpty()) {
             payments = JsonUtils.fromJson(data);
             for (int i = 0; i < payments.size(); i++) {
-                String string = " Amount " + String.valueOf(payments.get(i).getAmount());
-                String string2 = " Type " + String.valueOf(payments.get(i).getType());
-                String string3 = " Provider " + String.valueOf(payments.get(i).getProvider());
-                String string4 = " Reference " + String.valueOf(payments.get(i).getReference());
-                String string5 = " Class  " + String.valueOf(payments.get(i).getClass());
-
                 paymentTypesUsed.add(payments.get(i).getType());
-
-                Log.d("Payment " + i, string + string2 + string3 + string4 + string5);
             }
             updateUI();
         }
     }
 
     public void openAddPaymentDialog(View view) {
-        new AddPaymentDialog(this, payments, paymentTypesUsed, new AddPaymentDialog.PaymentAddedListener() {
-            @Override
-            public void onPaymentAdded(Payment payment) {
-                payments.add(payment);
-                paymentTypesUsed.add(payment.getType());
-
-                updateUI();
-            }
+        new AddPaymentDialog(this, paymentTypesUsed, payment -> {
+            payments.add(payment);
+            paymentTypesUsed.add(payment.getType());
+            updateUI();
         }).show();
     }
 
     private void savePayments() {
-        if(!payments.isEmpty()) {
+        if (!payments.isEmpty()) {
             FileHelper.writeToFile(this, JsonUtils.toJson(payments));
             Toast.makeText(MainActivity.this, "Payment Details Saved!", Toast.LENGTH_SHORT).show();
-        }
-        else{
+        } else {
             Toast.makeText(this, "No Payment Added!", Toast.LENGTH_SHORT).show();
         }
     }
@@ -110,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             chip.setOnCloseIconClickListener(v -> {
                 payments.remove(payment);
                 paymentTypesUsed.remove(payment.getType());
-//                savePayments();
                 updateUI();
             });
             chipGroup.addView(chip);

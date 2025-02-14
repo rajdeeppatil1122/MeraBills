@@ -11,7 +11,6 @@ public class JsonUtils {
     private static final Gson gson = new Gson();
 
     public static String toJson(List<Payment> payments) {
-        Log.d("gson.toJson(payments)", gson.toJson(payments));
         return gson.toJson(payments);
     }
 

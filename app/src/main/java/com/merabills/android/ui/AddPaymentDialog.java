@@ -20,7 +20,7 @@ public class AddPaymentDialog extends Dialog {
         void onPaymentAdded(Payment payment);
     }
 
-    public AddPaymentDialog(Context context, List<Payment> existingPayments, List<String> paymentTypesUsed, PaymentAddedListener listener) {
+    public AddPaymentDialog(Context context, List<String> paymentTypesUsed, PaymentAddedListener listener) {
         super(context);
         this.listener = listener;
         setContentView(R.layout.dialog_add_payment);
